@@ -634,13 +634,20 @@ body{font-size: 1rem;}
     left: 1130px;
     position: absolute;
 }
+/*히스토리 페이지*/
+.HistoryCanverLayOut{
+    margin-top: 57px;
+}
+.HistoryCanverBack{
+    position: absolute;
+    top: 150px;
+}
 .HistoryCanver{
     background-color: #EEF1F6;
-    height: 540px;
-    width: 70%;
-    margin-left: 400px;
-    position: absolute;
-    top: 180px;
+    height: 780px;
+    width: 85%;
+    padding-top: 10px;
+    margin: 30px 0 50px 400px;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 3px 3px lightgray;
 }

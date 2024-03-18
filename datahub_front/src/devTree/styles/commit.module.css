@@ -14,6 +14,7 @@
 }
 .selectBox{
     width: 25%;
+    background-color: #FFFFFF;
 }
 .selectTitleBox{
     background-color: #EDEDED;
@@ -25,7 +26,6 @@
     margin: 0;
     border: 1px solid #6B6B6B;
     max-height: 120px;
-
     overflow: auto;
 }
 .changeTableBox{
@@ -44,7 +44,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 .dataBox{
     width: 200px;

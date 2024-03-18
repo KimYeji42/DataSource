@@ -3,6 +3,7 @@ import HistoryButtonUI from "../uI/HistoryButtonUI";
 import HistoryButtonWhitever from "../uI/HistoryButtonWhitever";
 import HistorySideBarUI from "../uI/HistorySideBarUI";
 import CommitChartUI from "../uI/CommitChartUI";
+import ChangeCommitLayOut from "../../../devTree/Components/layout/ChangeCommitLayOut";
 
 export default function HistoryCanvasLayOut(){
     return(
@@ -15,14 +16,12 @@ export default function HistoryCanvasLayOut(){
             <div className={styles.buttonContainerT}>
                 <HistoryButtonUI title={"Reset"}/>
                 <HistoryButtonUI title={"Merge"}/>
-
             </div>
 
             <HistorySideBarUI/>
 
-            <div className={styles.HistoryCanver}>
-                <CommitChartUI/>
-            </div>
+
+
 
         </>
     )
