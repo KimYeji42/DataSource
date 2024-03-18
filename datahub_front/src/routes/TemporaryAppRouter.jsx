@@ -8,6 +8,7 @@ import ErrorPage from "./ErrorPage";
 import TemplateCodeEditor from "../template/components/page/TemplateCodeEditor";
 import ProjectViewPage from "../project/components/page/ProjectViewPage";
 import TemplateShowCasePage from "../project/components/page/TemplateShowCasePage";
+import HistoryViewPage from "../project/components/page/HistoryViewPage";
 
 export default function TemporaryAppRouter() {
     return (
@@ -28,6 +29,7 @@ export default function TemporaryAppRouter() {
                     <Route path='/templates' element={<TemplateShowCasePage />} />
                     <Route path='/template' element={<TemplatePage />} />\
                     <Route path='/template/codeEditor' element={<TemplateCodeEditor />} />
+                    <Route path='/History' element={<HistoryViewPage />} />
 
                     {/* 일치하는 경로가 없을 때의 에러 페이지 */}
                     <Route path='*' element={<ErrorPage />} />
