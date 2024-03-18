@@ -1,13 +1,15 @@
 import {useEffect, useState} from "react";
 import ColumnUI from "../ui/ColumnUI";
+import styles from '../../styleModule/ColumnStyle.module.css';
 
 export default function TableLayout(){
-    const [columnData, setColumnData] = useState([]);
+    const [tableData, setTable] = useState(new Map());
     const [tableID, setTableID] = useState(1);
-
+    const [createData , setCreateData] = useState([]) //추가 부분 리스트
+    const [updateData , setUpDateData] = useState([]) //수정 부분 리스트
     const fetchColumData = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/api/column/${tableID}`, {
+            const response = await fetch(`http://localhost:8080/api/table/${tableID}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -15,10 +17,10 @@ export default function TableLayout(){
             });
             const responseData = await response.json();
 
-            const dataArray = Array.isArray(responseData) ? responseData : [responseData]; // 받은 데이터가 배열이 아니면 배열로 변환
-            setColumnData(dataArray);
+            const tableMap = new Map(Object.entries(responseData.table));
+            //받은 데이터를 자바스크립트 Map객체로 변환
+            setTable(tableMap)
 
-            // console.log(dataArray)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -31,8 +33,15 @@ export default function TableLayout(){
 
 
     return (
-        <div>
-            <ColumnUI columns={columnData} />
+        <div className={styles.tableBox}>
+            <ColumnUI   
+                columns={tableData}
+                reloadData={fetchColumData}
+                updateData={updateData}
+                setUpdateData={setUpDateData}
+                createData = {createData}
+                setCreateData = {setCreateData}
+            />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 package com.example.datahub_back.service.backDataService
 
+import com.example.datahub_back.controller.toolController.data.DataResponse
 import com.example.datahub_back.data.toolData.exampleDataList
-import com.example.datahub_back.dto.toolDTO.Column
 import com.example.datahub_back.dto.toolDTO.Data
 import org.springframework.stereotype.Service
 
@@ -12,7 +12,24 @@ class DataService {
 
     fun getAllData(): List<Data> = dataList
 
-    fun getDataByColumn(columnID: Long) = dataList.filter { it.column.id == columnID }
+    fun getDataByColumn(id: Long): List<DataResponse> {
+        val filteredData: MutableList<DataResponse> = mutableListOf()
+
+        val columnData = exampleDataList.filter { it.column.id == id }
+
+        columnData.forEach {
+            filteredData.add(
+                    DataResponse(
+                        id = it.id,
+                        data = it.data,
+                        columnLine = it.columLine
+                    )
+            )
+        }
+
+        return filteredData
+    }
+
     fun getDataById(id: Long): Data? = dataList.find { it.id == id }
 
     fun createData(data: Data): Data {
@@ -37,5 +54,9 @@ class DataService {
         } else {
             null
         }
+    }
+
+    fun getDataByColumns(columnIDs: List<Long>) = dataList.filter {
+        it.column.id in columnIDs
     }
 }

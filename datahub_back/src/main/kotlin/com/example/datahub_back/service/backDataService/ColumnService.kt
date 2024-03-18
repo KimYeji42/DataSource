@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service
 @Service
 class ColumnService {
 
-    fun getColumnNameByTableId(tableID: Long) = exampleColumnList.filter {
+    fun getColumnNameByTableId(tableID: Long) : List<Column> = exampleColumnList.filter {
         it.table.id == tableID
     }.map { it }.toList()
+
+    fun getColumnByTableAndColumnName(table:Table , columnName : String)
+        = exampleColumnList.filter { it.table == table && columnName == it.name }[0]
 
     fun getColumnById(id: Long): Column? = exampleColumnList.find { it.id == id }
 

@@ -6,8 +6,12 @@ import TablesUI from "../uI/TablesUI";
 export default function ProjectTablesLayOut(){
     return(
         <div>
-            <div className={styles.Tables} style={{position: 'absolute'}}>
-                <TablesUI/>
+            <div className={styles.Tables} style={{
+                position: `absolute`,
+                zIndex: 1
+            }
+            } >
+                <TablesUI />
 
             </div>
             <ProjectViewCardUI cardtitle={"Tables"} iconImage={<Image src="../image/Tables.png"  className={styles.TablesIcon}/>} buttontitle={"DevTool 접속하기"} style={{position: 'relative'}}/>

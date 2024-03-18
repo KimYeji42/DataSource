@@ -10,7 +10,7 @@ export default function ProjectShowCasePage(){
             <ProjectSideBarLayOut/>
             <div className={styles.showCase}>
                 <TitleUI title={"프로젝트 선택"}/>
-                <LinkUI text={"프로젝트 생성"}/>
+                <LinkUI text={"프로젝트 생성"} redirect={"/createProject"}/>
                 <ProjectCardLayOut/>
             </div>
         </div>

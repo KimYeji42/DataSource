@@ -1,5 +1,3 @@
-// CreateProjectFormLayout.js
-
 import React, { useState } from 'react';
 import styles from '../styles.module.css';
 import ProjectTeamLayOut from './ProjectTeamLayOut';
@@ -91,16 +89,22 @@ export default function CreateProjectFormLayout() {
         setIsSuccessModalOpen(false);
     };
 
+
+    const redirectToProjects = () => {
+        // history.push('/projects'); // projects 페이지로 이동
+        console.log("클릭")
+    };
+
     return (
         <div>
             <ModalLayOut
                 data={data}
                 header={"아래와 같은 정보로 프로젝트를 생성합니다."}
                 isOpen={isSuccessModalOpen}
-                footer={"생성하시겠습니까?"}
                 onClose={() => setIsSuccessModalOpen(false)}
                 onCreate={handleCreate}
                 onReset={modalBtnOnClickHandler}
+                onClick = {redirectToProjects}
             />
 
             <ErrorModal

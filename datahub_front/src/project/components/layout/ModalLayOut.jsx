@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from '../styles.module.css'; // 스타일 파일 import
 
-const Modal = ({ isOpen, onClose, header, data }) => {
+const Modal = ({ isOpen, onClose, header, data ,onClick}) => {
     const handleCreate = () => {
         onClose(); // 모달을 닫음
+        onClick();
     };
 
     // isOpen이 false이면 모달을 렌더링하지 않음
@@ -23,6 +24,7 @@ const Modal = ({ isOpen, onClose, header, data }) => {
                         <p>프로젝트 팀: {data.teamProfile && data.teamProfile.map(member => member.username).join(', ')}</p>
                     </div>
                 )}
+
                 <div className={styles.modalBtnBox}>
                     <button onClick={handleCreate} className={styles.modalConfirmBtn}> 확인 </button>
                 </div>
