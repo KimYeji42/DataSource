@@ -67,10 +67,10 @@ val exampleDataBase = DataBase(1,"학교","학교 정보 데이터베이스",1,0
 val exampleDataBaseList = mutableListOf(exampleDataBase)
 
 //테이블 예시
-val exampleTable = Table(1,"학생 테이블","학생들의 정보를 모아둔 테이블", 1,0,exampleDataBase, LocalDateTime.now())
-val exampleTable1 = Table(2,"교강사 테이블","교강사 정보를 모아둔 테이블", 1,0,exampleDataBase, LocalDateTime.now())
-val exampleTable2 = Table(3,"삭제 테이블","삭제 정보를 모아둔 테이블", 0,1,exampleDataBase, LocalDateTime.now())
-val exampleTable3 = Table(4,"과목 테이블","과목 정보를 모아둔 테이블", 0,0,exampleDataBase, LocalDateTime.now())
+val exampleTable = Table(1,"학생 테이블","학생들의 정보를 모아둔 테이블", 1,0,exampleDataBase, LocalDateTime.now(),"a87e3cdf755500d7c6abf69813c444d72c2b2b664521e659f78ba17222ef44a0")
+val exampleTable1 = Table(2,"교강사 테이블","교강사 정보를 모아둔 테이블", 1,0,exampleDataBase, LocalDateTime.now(),"a87e3cdf755500d7c6abf69813c444d72c2b2b664521e659f78ba17222ef44a1")
+val exampleTable2 = Table(3,"삭제 테이블","삭제 정보를 모아둔 테이블", 0,1,exampleDataBase, LocalDateTime.now(),"a87e3cdf755500d7c6abf69813c444d72c2b2b664521e659f78ba17222ef44a2")
+val exampleTable3 = Table(4,"과목 테이블","과목 정보를 모아둔 테이블", 0,0,exampleDataBase, LocalDateTime.now(),"a87e3cdf755500d7c6abf69813c444d72c2b2b664521e659f78ba17222ef44a3")
 
 val exampleTableList = mutableListOf(exampleTable, exampleTable1, exampleTable2, exampleTable3)
 
@@ -83,7 +83,7 @@ val exampleColumn4= Column(4,"주소","학생 Table 주소","VarChar",0,0,0,exam
 val exampleColumnList = mutableListOf(exampleColumn1,exampleColumn2,exampleColumn3, exampleColumn4)
 
 // 데이터 예시
-val exampleData1 = Data(1, "홍길동", 1,exampleColumn1)
+val exampleData1 = Data(1, "어쩌구", 1,exampleColumn1)
 val exampleData5 = Data(5, "김철수", 2,exampleColumn1)
 val exampleData9 = Data(9, "이영희", 3,exampleColumn1)
 val exampleData13 = Data(13, "박민수", 4,exampleColumn1)
@@ -106,7 +106,7 @@ val exampleData4 = Data(4, "서울시 강남구", 1,exampleColumn4)
 val exampleData8 = Data(8, "서울시 서초구", 2,exampleColumn4)
 val exampleData12 = Data(12, "경기도 고양시", 3,exampleColumn4)
 val exampleData16 = Data(16, "인천시 남구", 4,exampleColumn4)
-val exampleData20 = Data(16, "인천시 남동구", 4,exampleColumn4)
+val exampleData20 = Data(16, "인천시 남동구", 5,exampleColumn4)
 
 val exampleDataList = mutableListOf(
     exampleData1, exampleData2, exampleData3, exampleData4,
