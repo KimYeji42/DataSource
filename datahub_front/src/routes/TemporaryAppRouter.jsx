@@ -12,6 +12,7 @@ import HistoryViewPage from "../project/components/page/HistoryViewPage";
 import TablePage from "../devSource/Components/page/TablePage";
 import TeamProfilePage from "../project/components/page/TeamProfilePage";
 import CommitSearchPage from "../devTree/Components/page/CommitSearchPage";
+import CurrentStatusPage from "../devTree/Components/page/CurrentStatusPage";
 
 
 export default function TemporaryAppRouter() {
@@ -38,6 +39,7 @@ export default function TemporaryAppRouter() {
                     <Route path='/table' element={<TablePage />} />
                     <Route path='/project/teamProfile' element={<TeamProfilePage />} />
                     <Route path='/commit' element={<CommitSearchPage />} />
+                    <Route path='/currentstatus' element={<CurrentStatusPage />} />
                     {/* 일치하는 경로가 없을 때의 에러 페이지 */}
                     <Route path='*' element={<ErrorPage />} />
                 </Routes>

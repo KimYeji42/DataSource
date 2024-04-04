@@ -2,8 +2,8 @@ import styles from "../../styles/styles.module.css";
 import CommitChartUI from "../ui/CommitChartUI";
 import HistoryCanvasLayOut from "../layout/HistoryCanvasLayOut";
 import ChangeCommitLayOut from "../layout/ChangeCommitLayOut";
-import HistorySideBarUI from "../ui/HistorySideBarUI";
 import React, {useState} from "react";
+import HistorySideBar2UI from "../ui/HistorySideBar2UI";
 
 export default function HistoryViewPage(){
     const [selectedProjectId, setSelectedProjectId] = useState(null);
@@ -34,8 +34,9 @@ export default function HistoryViewPage(){
                     />
                 </div>
             </div>
-            <HistorySideBarUI
+            <HistorySideBar2UI
                 onSelect={handleSelectProject}
+                defaultSelectedIndex={1}
             />
         </div>
     )
