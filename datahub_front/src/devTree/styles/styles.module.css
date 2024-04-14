@@ -286,6 +286,12 @@
     bottom: 50px;
     width: 100%;
 }
+.commitSuccess{
+    float: left;
+    font-weight: 800;
+    color: #5B5B5B;
+    margin: 10px 0px 0px 785px;
+}
 /*히스토리 표 ui*/
 .CommitChartBack{
     background-color: #FFFFFF;
