@@ -1,11 +1,13 @@
 import styles from "../../styles/styles.module.css";
-import HistorySideBar2UI from "../ui/HistorySideBar2UI";
-import React, {useState} from "react";
 import HistoryCanvasLayOut from "../layout/HistoryCanvasLayOut";
 import CurrentStatusTableLayOut from "../layout/CurrentStatusTableLayOut";
-import GuidePopupUI from "../ui/GuidePopupUI";
+import HistorySideBar2UI from "../ui/HistorySideBar2UI";
+import React, {useState} from "react";
+import CommitChartUI from "../ui/CommitChartUI";
+import ChangeCommitLayOut from "../layout/ChangeCommitLayOut";
+import CommitSearchUI from "../ui/CommitSearchUI";
 
-export default function CurrentStatusPage() {
+export default function CommitSearchPage(){
     const [selectedProjectId, setSelectedProjectId] = useState(null);
     const [selectedCommitId, setSelectedCommitId] = useState(null);
 
@@ -18,28 +20,27 @@ export default function CurrentStatusPage() {
     };
 
     return (
-        <div className={styles.CurrentPage}>
+        <div className={styles.HistoryPage}>
             <div className={styles.HistoryCanverLayOut}>
                 <HistoryCanvasLayOut/>
             </div>
 
             <div className={styles.HistoryCanverBack}>
                 <div className={styles.HistoryCanver}>
-                    <CurrentStatusTableLayOut commitId={selectedCommitId}/>
-                    <div className={styles.commitBox}>
-                        <textarea placeholder={"커밋 메시지를 입력하세요."} className={styles.CommitMs}></textarea>
-                        <button className={styles.CommitBtn}>커밋</button>
-
-                    </div>
-
-
+                    <CommitSearchUI/>
+                    <CommitChartUI
+                        projectId={selectedProjectId}
+                        onSelect={handleSelectCommit}
+                    />
+                    <ChangeCommitLayOut
+                        commitId={selectedCommitId}
+                    />
                 </div>
-
             </div>
             <HistorySideBar2UI
                 onSelect={handleSelectProject}
-                defaultSelectedIndex={0}
+                defaultSelectedIndex={2}
             />
         </div>
-    )
+    );
 }

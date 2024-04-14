@@ -40,6 +40,7 @@ export default function TemporaryAppRouter() {
                     <Route path='/project/teamProfile' element={<TeamProfilePage />} />
                     <Route path='/commit' element={<CommitSearchPage />} />
                     <Route path='/currentstatus' element={<CurrentStatusPage />} />
+                    <Route path='/commit/search' element={<CommitSearchPage />} />
                     {/* 일치하는 경로가 없을 때의 에러 페이지 */}
                     <Route path='*' element={<ErrorPage />} />
                 </Routes>

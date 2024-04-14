@@ -67,14 +67,11 @@ export default function HistorySideBar2UI({ onSelect, defaultSelectedIndex  }) {
                     <Link className={selectedIndex === 1 ? `${styles.HistorySideMenuHistory} ${styles.selectedMenuItem}` : styles.HistorySideMenuHistory}
                        onClick={() => handleClick(1)} to="/History" >히스토리</Link>
                     <Link className={selectedIndex === 2 ? `${styles.HistorySideMenuSearch} ${styles.selectedMenuItem}` : styles.HistorySideMenuSearch}
-                       onClick={() => handleClick(2)} to="/">커밋 선택</Link>
-                    <p className={selectedIndex === 3 ? `${styles.HistorySideMenuRequest} ${styles.selectedMenuItem2}` : styles.HistorySideMenuRequest}
-                       onClick={() => handleClick(3)} to="/">풀 리퀘스트</p>
+                       onClick={() => handleClick(2)} to="/commit/search">커밋 선택</Link>
                 </div>
             </div>
 
         </>
 
-    )
-        ;
+    );
 }
